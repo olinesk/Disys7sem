@@ -76,7 +76,24 @@ func philo(id int, leftUp, leftDown, rightUp, rightDown chan string) {
 }
 
 func main() {
+	// Creating channels for each philo, 10 because each philo has 2 forks.
+	channels := make([]chan string, 10) // 2 channels per philo
+	for i := 0; i < 10; i++ {
+		channels[i] = make(chan string)
+	}
 
+	for i := 0; i < 5; i++ {
+		go fork(channels[2*i], channels[2*i+1], channels[(2*i+2)%10], channels[(2*i+3)%10])
+	}
+
+	for i := 0; i < 5; i++ {
+		go philo(i, channels[2*i], channels[2*i+1], channels[(2*i+2)%10], channels[(2*i+3)%10])
+	}
+
+	//fmt.Println("All philo fullo:)")
+
+	// Prevents main function from exiting
+	select {} 
 
 }
 
