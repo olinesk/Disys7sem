@@ -2,24 +2,27 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"time"
 )
 
+var philoDone = make(chan bool)    // Channel to signal when a philosopher is done eating 3 times
+var allPhiloDone = make(chan bool) // Channel to signal when all philosophers are done
+
+/*
 func randomTime(max int) {
 	time.Sleep(time.Millisecond * time.Duration(rand.Intn(max*10)))
-}
+}*/
 
-func fork(leftUp, leftDown, rightUp, rightDown chan string){
+func fork(leftUp, leftDown, rightUp, rightDown chan string) {
 	for {
 		select {
-		case <- leftDown:
+		case <-leftDown:
 			leftUp <- "free fork!"
-			<- leftDown
-		
-		case <- rightDown:
+			<-leftDown
+
+		case <-rightDown:
 			rightUp <- "free fork!"
-			<- rightDown
+			<-rightDown
 		}
 	}
 }
@@ -28,82 +31,103 @@ func philo(id int, leftUp, leftDown, rightUp, rightDown chan string) {
 	var philoHowFullo int
 	// Run loop until each philo has eaten 3 times
 	for philoHowFullo < 3 {
+
 		fmt.Printf("Philo %d thinko\n", id)
-		randomTime(2)
-		
-		// if-statement avoiding deadlocks
+		time.Sleep(time.Duration(1+id) * time.Second)
+
+		// Deadlock avoidance: Philosopher 4 picks the right fork first, others pick the left first
 		if id == 4 {
 			rightDown <- "fork free?"
-			<- rightUp
+			<-rightUp
 
 			leftDown <- "fork free?"
-			<- leftUp
+			<-leftUp
 		} else {
 			leftDown <- "fork free?"
-			<- leftUp
+			<-leftUp
 
 			rightDown <- "fork free?"
-			<- rightUp
+			<-rightUp
 		}
 
 		philoHowFullo++
 		fmt.Printf("Philo %d eato\n", id)
-		randomTime(3)
+		time.Sleep(2 * time.Second)
 
+		// Release forks after eating
 		leftDown <- "Im done, delicious!"
 		rightDown <- "Im done, delicious!"
 	}
-	
+
 	fmt.Printf("Philo %d is fullo\n", id)
-	
-	
+
+	philoDone <- true
+
 	/*
-	for i := 0; i < 10; i++ {
+		for i := 0; i < 10; i++ {
 
-		leftDown <- "fork free?"
-		<- leftUp 
+			leftDown <- "fork free?"
+			<- leftUp
 
-		rightDown <- "fork free?"
-		<- rightUp
+			rightDown <- "fork free?"
+			<- rightUp
 
-		fmt.Println("Im eating with free forks, yummyyy")
+			fmt.Println("Im eating with free forks, yummyyy")
 
-		leftDown <- "Im done, delicious!"
-		rightDown <- "Im done, delicious!"
+			leftDown <- "Im done, delicious!"
+			rightDown <- "Im done, delicious!"
+		}
+
+		fmt.Println("This philo is fullo")*/
+}
+
+func countPhiloDone() {
+	var count int
+	for count < 5 {
+		<-philoDone
+		count++
 	}
-
-	fmt.Println("This philo is fullo")*/
+	allPhiloDone <- true
 }
 
 func main() {
 	// Creating channels for each philo, 10 because each philo has 2 forks.
-	channels := make([]chan string, 10) // 2 channels per philo
-	for i := 0; i < 10; i++ {
+	/*channels := make([]chan string, 5) // 2 channels per philo
+	for i := 0; i < 5; i++ {
 		channels[i] = make(chan string)
+	}*/
+	// Create channels for each fork (two channels per fork)
+	forks := make([][2]chan string, 5)
+	for i := range forks {
+		forks[i][0] = make(chan string) // left input
+		forks[i][1] = make(chan string) // right output
 	}
 
+	// Start fork goroutines
 	for i := 0; i < 5; i++ {
-		go fork(channels[2*i], channels[2*i+1], channels[(2*i+2)%10], channels[(2*i+3)%10])
+		go fork(forks[i][0], forks[i][1], forks[(i+1)%5][0], forks[(i+1)%5][1])
 	}
 
+	// Start philosopher goroutines
 	for i := 0; i < 5; i++ {
-		go philo(i, channels[2*i], channels[2*i+1], channels[(2*i+2)%10], channels[(2*i+3)%10])
+		go philo(i, forks[i][0], forks[i][1], forks[(i+1)%5][0], forks[(i+1)%5][1])
 	}
 
-	//fmt.Println("All philo fullo:)")
+	go countPhiloDone()
 
-	// Prevents main function from exiting
-	select {} 
+	<-allPhiloDone
+
+	//time.Sleep(10 * time.Second)
+
+	// Let the main function wait for philosophers to finish eating
+	time.Sleep(15 * time.Second)
+
+	fmt.Println("All philo fullo:)")
 
 }
 
-
-
-
-
-
 /*
-var p1, p2, p3, p4, p5 string 
+var p1, p2, p3, p4, p5 string
 var f1, f2, f3, f4, f5 bool
 
 func philo1(){
@@ -136,7 +160,3 @@ func philo5(){
 	} else {fmt.Println("thinking")}
 }
 */
-
-
-
-
