@@ -3,3 +3,26 @@ syntax = "proto3";
 package proto;
 option go_package = "./proto";
 
+message User {
+    string id = 1;
+    string name = 2;
+}
+
+message ChatMessage {
+    string userID = 1;
+    string content = 2;
+    int32 timeStamp = 3;
+    string user_name = 4;
+    bool status_message = 5;
+}
+
+message Connect {
+    User user = 1;
+}
+
+message Close{};
+
+service ChittyChat {
+    rpc Join(Connect) returns (stream ChatMessage);
+    rpc Publish(ChatMessage) returns (Close);
+}
