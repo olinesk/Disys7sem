@@ -1,4 +1,4 @@
-module github.com/olinesk/Disys7sem/tree/main/ChittyChat
+module ChittyChat
 
 go 1.23.0
 
