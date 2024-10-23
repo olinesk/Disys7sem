@@ -12,7 +12,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	proto "github.com/olinesk/Disys7sem/tree/main/ChittyChat"
+	proto "github.com/olinesk/Disys7sem/tree/main/ChittyChat/proto"
 )
 
 type Server struct {
@@ -56,7 +56,7 @@ func startServer(server *Server) {
 	log.Printf("Started server at port: %d\n", server.port)
 
 	// Register the grpc server and serve its listener
-	proto.RegisterTimeAskServer(grpcServer, server)
+	proto.RegisterChittyChatServer(grpcServer, server)
 	serveError := grpcServer.Serve(listener)
 	if serveError != nil {
 		log.Fatalf("Could not serve listener")
