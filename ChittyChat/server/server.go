@@ -17,7 +17,6 @@ import (
 
 type Connection struct {
 	stream proto.ChittyChat_JoinServer
-	id string
 	name string
 	active bool
 	error chan error
@@ -30,7 +29,7 @@ type Server struct {
 }
 
 var (
-	port = flag.Int("port", 0, "server port number")
+port = flag.Int("port", 0, "server port number")
 	serverLamportClock int64 = 0;
 	users = make(map[string]*Connection)
 )
@@ -49,7 +48,6 @@ func main() {
 
 	// Parses the flags and gets port from commandline
 	flag.Parse()
-	fmt.Println(".:server is starting:.")
 
 	//Creates server struct
 	server := &Server {
@@ -93,7 +91,6 @@ func (s *Server) Join(in *proto.Connect, stream proto.ChittyChat_JoinServer) err
 
 	con := &Connection {
 		stream: stream,
-		id: in.User.Id,
 		name: in.User.Name,
 		active: true,
 		error: make(chan error),
@@ -105,8 +102,6 @@ func (s *Server) Join(in *proto.Connect, stream proto.ChittyChat_JoinServer) err
 	userJoinedChat := &proto.ChatMessage{
 		UserName: in.User.Name,
 		Content: in.User.Name + " joined the chat ",
-		TimeStamp: in.User.Usertime,
-		UserID: in.User.Id,
 	}
 
 	if serverLamportClock < int64(userJoinedChat.TimeStamp) {
@@ -170,7 +165,7 @@ func (s *Server) Publish(context context.Context, in *proto.ChatMessage)(*proto.
 	return &proto.Close{}, nil
 }
 
-func (s *Server) Leave(in proto.Connect, stream proto.ChittyChat_LeaveServer) error {
+func (s *Server) Leave(in *proto.Connect, stream proto.ChittyChat_LeaveServer) error {
 
 	for name := range s.users {
 		if name == in.User.Name {
