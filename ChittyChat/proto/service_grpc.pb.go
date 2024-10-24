@@ -19,8 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ChittyChat_Join_FullMethodName    = "/proto.ChittyChat/Join"
-	ChittyChat_Publish_FullMethodName = "/proto.ChittyChat/Publish"
+	ChittyChat_Join_FullMethodName    = "/ChittyChat.ChittyChat/Join"
+	ChittyChat_Publish_FullMethodName = "/ChittyChat.ChittyChat/Publish"
+	ChittyChat_Leave_FullMethodName   = "/ChittyChat.ChittyChat/Leave"
 )
 
 // ChittyChatClient is the client API for ChittyChat service.
@@ -29,6 +30,7 @@ const (
 type ChittyChatClient interface {
 	Join(ctx context.Context, in *Connect, opts ...grpc.CallOption) (grpc.ServerStreamingClient[ChatMessage], error)
 	Publish(ctx context.Context, in *ChatMessage, opts ...grpc.CallOption) (*Close, error)
+	Leave(ctx context.Context, in *Connect, opts ...grpc.CallOption) (grpc.ServerStreamingClient[ChatMessage], error)
 }
 
 type chittyChatClient struct {
@@ -68,12 +70,32 @@ func (c *chittyChatClient) Publish(ctx context.Context, in *ChatMessage, opts ..
 	return out, nil
 }
 
+func (c *chittyChatClient) Leave(ctx context.Context, in *Connect, opts ...grpc.CallOption) (grpc.ServerStreamingClient[ChatMessage], error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	stream, err := c.cc.NewStream(ctx, &ChittyChat_ServiceDesc.Streams[1], ChittyChat_Leave_FullMethodName, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &grpc.GenericClientStream[Connect, ChatMessage]{ClientStream: stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type ChittyChat_LeaveClient = grpc.ServerStreamingClient[ChatMessage]
+
 // ChittyChatServer is the server API for ChittyChat service.
 // All implementations must embed UnimplementedChittyChatServer
 // for forward compatibility.
 type ChittyChatServer interface {
 	Join(*Connect, grpc.ServerStreamingServer[ChatMessage]) error
 	Publish(context.Context, *ChatMessage) (*Close, error)
+	Leave(*Connect, grpc.ServerStreamingServer[ChatMessage]) error
 	mustEmbedUnimplementedChittyChatServer()
 }
 
@@ -89,6 +111,9 @@ func (UnimplementedChittyChatServer) Join(*Connect, grpc.ServerStreamingServer[C
 }
 func (UnimplementedChittyChatServer) Publish(context.Context, *ChatMessage) (*Close, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Publish not implemented")
+}
+func (UnimplementedChittyChatServer) Leave(*Connect, grpc.ServerStreamingServer[ChatMessage]) error {
+	return status.Errorf(codes.Unimplemented, "method Leave not implemented")
 }
 func (UnimplementedChittyChatServer) mustEmbedUnimplementedChittyChatServer() {}
 func (UnimplementedChittyChatServer) testEmbeddedByValue()                    {}
@@ -140,11 +165,22 @@ func _ChittyChat_Publish_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ChittyChat_Leave_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(Connect)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(ChittyChatServer).Leave(m, &grpc.GenericServerStream[Connect, ChatMessage]{ServerStream: stream})
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type ChittyChat_LeaveServer = grpc.ServerStreamingServer[ChatMessage]
+
 // ChittyChat_ServiceDesc is the grpc.ServiceDesc for ChittyChat service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ChittyChat_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "proto.ChittyChat",
+	ServiceName: "ChittyChat.ChittyChat",
 	HandlerType: (*ChittyChatServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -156,6 +192,11 @@ var ChittyChat_ServiceDesc = grpc.ServiceDesc{
 		{
 			StreamName:    "Join",
 			Handler:       _ChittyChat_Join_Handler,
+			ServerStreams: true,
+		},
+		{
+			StreamName:    "Leave",
+			Handler:       _ChittyChat_Leave_Handler,
 			ServerStreams: true,
 		},
 	},

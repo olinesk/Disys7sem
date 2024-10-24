@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ChittyChat;
 
-option go_package = "./proto";
+option go_package = "proto/proto";
 
 message ChatMessage {
     string userID = 1;
@@ -27,5 +27,5 @@ message Close{}
 service ChittyChat {
     rpc Join(Connect) returns (stream ChatMessage);
     rpc Publish(ChatMessage) returns (Close);
-    rpc Leave(Connect) returns (ChatMessage);
+    rpc Leave(Connect) returns ( stream ChatMessage);
 }

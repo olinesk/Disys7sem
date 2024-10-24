@@ -90,6 +90,7 @@ func startServer(server *Server) {
 }
 
 func (s *Server) Join(in *proto.Connect, stream proto.ChittyChat_JoinServer) error {
+
 	con := &Connection {
 		stream: stream,
 		id: in.User.Id,
@@ -104,7 +105,7 @@ func (s *Server) Join(in *proto.Connect, stream proto.ChittyChat_JoinServer) err
 	userJoinedChat := &proto.ChatMessage{
 		UserName: in.User.Name,
 		Content: in.User.Name + " joined the chat ",
-		TimeStamp: int32(in.ProtoReflect().ProtoMethods().Flags),
+		TimeStamp: in.User.Usertime,
 		UserID: in.User.Id,
 	}
 
@@ -142,7 +143,7 @@ func (s *Server) Publish(context context.Context, in *proto.ChatMessage)(*proto.
 				msgToBeSent := &proto.ChatMessage{
 				UserName:	in.UserName,
 				Content:	in.UserName + ": " + content.Content,
-				TimeStamp:	int32(serverLamportClock),
+				TimeStamp:	serverLamportClock,
 				}
 
 				msgToBeSent.Content += "\n"
@@ -168,5 +169,17 @@ func (s *Server) Publish(context context.Context, in *proto.ChatMessage)(*proto.
 	<- done
 	return &proto.Close{}, nil
 }
+
+func (s *Server) Leave(in proto.Connect, stream proto.ChittyChat_LeaveServer) error {
+
+	for name := range s.users {
+		if name == in.User.Name {
+			delete(s.users, name)
+			log.Printf("User: " + in.User.Name + " left the chat at " + "%v", serverLamportClock);
+		}
+	}
+	return nil
+}
+
 
 
