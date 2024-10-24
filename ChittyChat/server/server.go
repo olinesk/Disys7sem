@@ -104,7 +104,69 @@ func (s *Server) Join(in *proto.Connect, stream proto.ChittyChat_JoinServer) err
 	userJoinedChat := &proto.ChatMessage{
 		UserName: in.User.Name,
 		Content: in.User.Name + " joined the chat ",
-		TimeStamp: in.User.Utime,
+		TimeStamp: int32(in.ProtoReflect().ProtoMethods().Flags),
 		UserID: in.User.Id,
 	}
+
+	if serverLamportClock < int64(userJoinedChat.TimeStamp) {
+		serverLamportClock = int64(userJoinedChat.TimeStamp)
+	}
+
+	s.Publish(con.stream.Context(), userJoinedChat)
+
+	log.Printf("User " + in.User.Name + " joined the chat at " + "%v", serverLamportClock);
+
+	return <-con.error
 }
+
+func (s *Server) Publish(context context.Context, in *proto.ChatMessage)(*proto.Close, error) {
+	
+	//Making sure goroutines gets to finish
+	wait := sync.WaitGroup{}; 
+	done := make(chan int) 
+	if serverLamportClock < int64(in.TimeStamp) {
+		serverLamportClock = int64(in.TimeStamp)
+	}
+
+	serverLamportClock++
+
+	for _, con := range s.users {
+		wait.Add(1)
+
+		fmt.Printf("Server Time: %v", serverLamportClock)
+		go func (content *proto.ChatMessage, con *Connection) {
+			serverLamportClock++
+			defer wait.Done()
+
+			if con.active {
+				msgToBeSent := &proto.ChatMessage{
+				UserName:	in.UserName,
+				Content:	in.UserName + ": " + content.Content,
+				TimeStamp:	int32(serverLamportClock),
+				}
+
+				msgToBeSent.Content += "\n"
+
+				err := con.stream.Send(msgToBeSent)
+
+				if err != nil {
+					log.Printf("User: " + content.UserName + " left the chat at " + "%v", serverLamportClock);
+					con.active = false
+					con.error <- err
+				}
+			}
+		} (in, con)
+	}
+
+	log.Printf(in.UserName + " sent message " + in.Content + " at: " + "%v", serverLamportClock);
+
+	go func() {
+		wait.Wait()
+		close(done)
+	}()
+	
+	<- done
+	return &proto.Close{}, nil
+}
+
+
