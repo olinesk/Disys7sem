@@ -101,7 +101,8 @@ func (s *Server) Join(in *proto.Connect, stream proto.ChittyChat_JoinServer) err
 	//Participants in chat get notified when new user joins
 	userJoinedChat := &proto.ChatMessage{
 		UserName: in.User.Name,
-		Content: in.User.Name + " joined the chat ",
+		Content: "New Participant: " + in.User.Name + " joined the chat ",
+		TimeStamp: in.User.Timestamp,
 	}
 
 	if serverLamportClock < int64(userJoinedChat.TimeStamp) {
@@ -110,7 +111,7 @@ func (s *Server) Join(in *proto.Connect, stream proto.ChittyChat_JoinServer) err
 
 	s.Publish(con.stream.Context(), userJoinedChat)
 
-	log.Printf("User " + in.User.Name + " joined the chat at " + "%v", serverLamportClock);
+	log.Printf("Participant " + in.User.Name + " joined Chitty-Chat at Lamport time " + "%v", serverLamportClock);
 
 	return <-con.error
 }
@@ -146,7 +147,7 @@ func (s *Server) Publish(context context.Context, in *proto.ChatMessage)(*proto.
 				err := con.stream.Send(msgToBeSent)
 
 				if err != nil {
-					log.Printf("User: " + content.UserName + " left the chat at " + "%v", serverLamportClock);
+					log.Printf("Participant: " + content.UserName + " left Chitty-Chat at Lamport time " + "%v", serverLamportClock);
 					con.active = false
 					con.error <- err
 				}
@@ -170,7 +171,7 @@ func (s *Server) Leave(in *proto.Connect, stream proto.ChittyChat_LeaveServer) e
 	for name := range s.users {
 		if name == in.User.Name {
 			delete(s.users, name)
-			log.Printf("User: " + in.User.Name + " left the chat at " + "%v", serverLamportClock);
+			log.Printf("Participant " + in.User.Name + " left Chitty-Chat at Lamport time " + "%v", serverLamportClock);
 		}
 	}
 	return nil
