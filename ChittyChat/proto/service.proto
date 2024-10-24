@@ -5,7 +5,7 @@ package ChittyChat;
 option go_package = "proto/proto";
 
 message ChatMessage {
-    string user_name = 1;
+    string userName = 1;
     string content = 2;
     int64 timeStamp = 3;
     

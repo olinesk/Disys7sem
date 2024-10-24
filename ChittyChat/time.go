@@ -1,5 +1,5 @@
 package main
 
-type clock struct {
+type time struct {
 	latestTime int64
 }

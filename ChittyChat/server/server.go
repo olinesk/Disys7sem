@@ -3,11 +3,11 @@ package main
 import (
 	"context"
 	"flag"
-	"log"
 	"fmt"
-	"strconv"
+	"log"
 	"net"
 	"os"
+	"strconv"
 	"sync"
 
 	"google.golang.org/grpc"
@@ -17,31 +17,30 @@ import (
 
 type Connection struct {
 	stream proto.ChittyChat_JoinServer
-	name string
+	name   string
 	active bool
-	error chan error
+	error  chan error
 }
 type Server struct {
 	proto.UnimplementedChittyChatServer // Necessary
-	name                             string
-	port                             int
-	users 							 map[string]*Connection
+	name                                string
+	port                                int
+	users                               map[string]*Connection
 }
 
 var (
-port = flag.Int("port", 0, "server port number")
-	serverLamportClock int64 = 0;
-	users = make(map[string]*Connection)
+	port                     = flag.Int("port", 0, "server port number")
+	serverLamportTime int64 = 0
+	users                    = make(map[string]*Connection)
 )
-
 
 func main() {
 
 	//set up log
 	f, err := os.OpenFile("golang-demo.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
-	
+
 	if err != nil {
-		log.Fatalf("Could not open: %v", err)
+		log.Fatalf("Could not open file: %v", err)
 	}
 	defer f.Close()
 	log.SetOutput(f)
@@ -50,11 +49,10 @@ func main() {
 	flag.Parse()
 
 	//Creates server struct
-	server := &Server {
-		name: "serverName",
-		port: *port,
+	server := &Server{
+		name:  "serverName",
+		port:  *port,
 		users: users,
-
 	}
 
 	// Starting the server
@@ -72,7 +70,7 @@ func startServer(server *Server) {
 	grpcServer := grpc.NewServer()
 
 	// Make the server listen at the given port (convert int port to string)
-	listener, err := net.Listen("tcp", ":"+strconv.Itoa(server.port))
+	listener, err := net.Listen("tcp", "host:"+strconv.Itoa(server.port))
 
 	if err != nil {
 		log.Fatalf("Could not create the server %v", err)
@@ -89,57 +87,59 @@ func startServer(server *Server) {
 
 func (s *Server) Join(in *proto.Connect, stream proto.ChittyChat_JoinServer) error {
 
-	con := &Connection {
+	con := &Connection{
 		stream: stream,
-		name: in.User.Name,
+		name:   in.User.Name,
 		active: true,
-		error: make(chan error),
+		error:  make(chan error),
 	}
 
 	s.users[in.User.Name] = con
 
 	//Participants in chat get notified when new user joins
 	userJoinedChat := &proto.ChatMessage{
-		UserName: in.User.Name,
-		Content: "New Participant: " + in.User.Name + " joined the chat ",
+		UserName:  in.User.Name,
+		Content:   "New Participant: " + in.User.Name + " joined the chat ",
 		TimeStamp: in.User.Timestamp,
 	}
 
-	if serverLamportClock < int64(userJoinedChat.TimeStamp) {
-		serverLamportClock = int64(userJoinedChat.TimeStamp)
+	if serverLamportTime < int64(userJoinedChat.TimeStamp) {
+		serverLamportTime = int64(userJoinedChat.TimeStamp)
 	}
 
 	s.Publish(con.stream.Context(), userJoinedChat)
 
-	log.Printf("Participant " + in.User.Name + " joined Chitty-Chat at Lamport time " + "%v", serverLamportClock);
+	log.Printf("Participant " + in.User.Name + " joined Chitty-Chat at Lamport time " + "%v", serverLamportTime)
 
 	return <-con.error
 }
 
-func (s *Server) Publish(context context.Context, in *proto.ChatMessage)(*proto.Close, error) {
-	
+func (s *Server) Publish(context context.Context, in *proto.ChatMessage) (*proto.Close, error) {
+
 	//Making sure goroutines gets to finish
-	wait := sync.WaitGroup{}; 
-	done := make(chan int) 
-	if serverLamportClock < int64(in.TimeStamp) {
-		serverLamportClock = int64(in.TimeStamp)
+	wait := sync.WaitGroup{}
+
+	//Used to know if goroutines are finised
+	done := make(chan int)
+	if serverLamportTime < int64(in.TimeStamp) {
+		serverLamportTime = int64(in.TimeStamp)
 	}
 
-	serverLamportClock++
+	serverLamportTime++
 
 	for _, con := range s.users {
 		wait.Add(1)
 
-		fmt.Printf("Server Time: %v", serverLamportClock)
-		go func (content *proto.ChatMessage, con *Connection) {
-			serverLamportClock++
+		fmt.Printf("Server Time: %v", serverLamportTime)
+		go func(content *proto.ChatMessage, con *Connection) {
+			serverLamportTime++
 			defer wait.Done()
 
 			if con.active {
 				msgToBeSent := &proto.ChatMessage{
-				UserName:	in.UserName,
-				Content:	in.UserName + ": " + content.Content,
-				TimeStamp:	serverLamportClock,
+					UserName:  in.UserName,
+					Content:   in.UserName + ": " + content.Content,
+					TimeStamp: serverLamportTime,
 				}
 
 				msgToBeSent.Content += "\n"
@@ -147,22 +147,22 @@ func (s *Server) Publish(context context.Context, in *proto.ChatMessage)(*proto.
 				err := con.stream.Send(msgToBeSent)
 
 				if err != nil {
-					log.Printf("Participant: " + content.UserName + " left Chitty-Chat at Lamport time " + "%v", serverLamportClock);
+					log.Printf("Participant: " + content.UserName + " left Chitty-Chat at Lamport time " + "%v", serverLamportTime)
 					con.active = false
 					con.error <- err
 				}
 			}
-		} (in, con)
+		}(in, con)
 	}
 
-	log.Printf(in.UserName + " sent message " + in.Content + " at: " + "%v", serverLamportClock);
+	log.Printf(in.UserName + " sent message: " + in.Content + " at Lamport time: " + "%v", serverLamportTime)
 
 	go func() {
 		wait.Wait()
 		close(done)
 	}()
-	
-	<- done
+
+	<-done
 	return &proto.Close{}, nil
 }
 
@@ -171,11 +171,8 @@ func (s *Server) Leave(in *proto.Connect, stream proto.ChittyChat_LeaveServer) e
 	for name := range s.users {
 		if name == in.User.Name {
 			delete(s.users, name)
-			log.Printf("Participant " + in.User.Name + " left Chitty-Chat at Lamport time " + "%v", serverLamportClock);
+			log.Printf("Participant " + in.User.Name + " left Chitty-Chat at Lamport time " + "%v", serverLamportTime)
 		}
 	}
 	return nil
 }
-
-
-
