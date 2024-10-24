@@ -70,7 +70,7 @@ func startServer(server *Server) {
 	grpcServer := grpc.NewServer()
 
 	// Make the server listen at the given port (convert int port to string)
-	listener, err := net.Listen("tcp", "host:"+strconv.Itoa(server.port))
+	listener, err := net.Listen("tcp", ":"+strconv.Itoa(server.port))
 
 	if err != nil {
 		log.Fatalf("Could not create the server %v", err)
@@ -99,7 +99,7 @@ func (s *Server) Join(in *proto.Connect, stream proto.ChittyChat_JoinServer) err
 	//Participants in chat get notified when new user joins
 	userJoinedChat := &proto.ChatMessage{
 		UserName:  in.User.Name,
-		Content:   "New Participant: " + in.User.Name + " joined the chat ",
+		Content:   in.User.Name + " joined the chat",
 		TimeStamp: in.User.Timestamp,
 	}
 
@@ -109,7 +109,7 @@ func (s *Server) Join(in *proto.Connect, stream proto.ChittyChat_JoinServer) err
 
 	s.Publish(con.stream.Context(), userJoinedChat)
 
-	log.Printf("Participant " + in.User.Name + " joined Chitty-Chat at Lamport time " + "%v", serverLamportTime)
+	log.Printf("Participant " + in.User.Name + " joined Chitty-Chat at Lamport time: " + "%v", serverLamportTime)
 
 	return <-con.error
 }
@@ -147,7 +147,7 @@ func (s *Server) Publish(context context.Context, in *proto.ChatMessage) (*proto
 				err := con.stream.Send(msgToBeSent)
 
 				if err != nil {
-					log.Printf("Participant: " + content.UserName + " left Chitty-Chat at Lamport time " + "%v", serverLamportTime)
+					log.Printf("Participant " + content.UserName + " left Chitty-Chat at Lamport time: " + "%v", serverLamportTime)
 					con.active = false
 					con.error <- err
 				}
@@ -155,7 +155,7 @@ func (s *Server) Publish(context context.Context, in *proto.ChatMessage) (*proto
 		}(in, con)
 	}
 
-	log.Printf(in.UserName + " sent message: " + in.Content + " at Lamport time: " + "%v", serverLamportTime)
+	log.Printf(in.UserName + " sent message: \"" + in.Content + "\", at Lamport time: " + "%v", serverLamportTime)
 
 	go func() {
 		wait.Wait()
@@ -171,7 +171,7 @@ func (s *Server) Leave(in *proto.Connect, stream proto.ChittyChat_LeaveServer) e
 	for name := range s.users {
 		if name == in.User.Name {
 			delete(s.users, name)
-			log.Printf("Participant " + in.User.Name + " left Chitty-Chat at Lamport time " + "%v", serverLamportTime)
+			log.Printf("Participant " + in.User.Name + " left Chitty-Chat at Lamport time: " + "%v", serverLamportTime)
 		}
 	}
 	return nil

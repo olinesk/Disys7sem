@@ -1,1 +1,67 @@
 2024/10/24 16:37:20 Started server at port: 8081
+2024/10/24 19:19:23 Could not create the server listen tcp: lookup host: no such host
+2024/10/24 19:25:21 Started server at port: 8081
+2024/10/24 19:26:12 Clara sent message: New Participant: Clara joined the chat  at Lamport time: 2
+2024/10/24 19:26:12 Participant Clara joined Chitty-Chat at Lamport time 3
+2024/10/24 19:26:47 Clara sent message: New Participant: Clara joined the chat  at Lamport time: 4
+2024/10/24 19:26:47 Participant Clara joined Chitty-Chat at Lamport time 5
+2024/10/24 19:26:52 Clara sent message: New Participant: Clara joined the chat  at Lamport time: 6
+2024/10/24 19:26:52 Participant Clara joined Chitty-Chat at Lamport time 7
+2024/10/24 19:26:55 Clara sent message: hej at Lamport time: 10
+2024/10/24 19:27:25 Clara sent message: hej at Lamport time: 14
+2024/10/24 19:27:35 Clara1 sent message: New Participant: Clara1 joined the chat  at Lamport time: 16
+2024/10/24 19:27:35 Participant Clara1 joined Chitty-Chat at Lamport time 18
+2024/10/24 19:27:38 Clara1 sent message: hej at Lamport time: 21
+2024/10/24 19:27:52 Clara3 sent message: New Participant: Clara3 joined the chat  at Lamport time: 24
+2024/10/24 19:27:52 Participant Clara3 joined Chitty-Chat at Lamport time 27
+2024/10/24 19:27:54 Clara3 sent message: hej at Lamport time: 30
+2024/10/24 19:28:02 Clara sent message: hej at Lamport time: 34
+2024/10/24 19:28:17 Clara3 sent message: Participant 39Clara3 left the chat  at Lamport time: %!v(MISSING)
+2024/10/24 19:28:17 Participant Clara3 left Chitty-Chat at Lamport time 39
+2024/10/24 19:29:17 Clara1 sent message: Participant 44Clara1 left the chat  at Lamport time: %!v(MISSING)
+2024/10/24 19:29:17 Participant Clara1 left Chitty-Chat at Lamport time 45
+2024/10/24 19:35:30 Started server at port: 8081
+2024/10/24 19:36:11 User1 sent message: New Participant: User1 joined the chat  at Lamport time: 2
+2024/10/24 19:36:11 Participant User1 joined Chitty-Chat at Lamport time 3
+2024/10/24 19:36:16 User1 sent message: hej at Lamport time: 6
+2024/10/24 19:36:19 User1 sent message: Participant: User1 left the chat 10 at Lamport time: %!v(MISSING)
+2024/10/24 19:36:19 Participant User1 left Chitty-Chat at Lamport time 10
+2024/10/24 19:38:01 Started server at port: 5001
+2024/10/24 19:48:32 Started server at port: 8081
+2024/10/24 19:50:36 Started server at port: 8081
+2024/10/24 19:50:43 User1 sent message: New Participant: User1 joined the chat  at Lamport time: 2
+2024/10/24 19:50:43 Participant User1 joined Chitty-Chat at Lamport time 3
+2024/10/24 19:50:49 User1 sent message: hej at Lamport time: 6
+2024/10/24 19:50:53 User1 sent message: Participant: User1 left the chat  at Lamport time: 10
+2024/10/24 19:50:53 Participant User1 left Chitty-Chat at Lamport time 11
+2024/10/24 20:02:30 Started server at port: 8081
+2024/10/24 20:02:38 User1 sent message: "New user User1 joined the chat", at Lamport time: 2
+2024/10/24 20:02:38 Participant User1 joined Chitty-Chat at Lamport time: 3
+2024/10/24 20:02:44 User1 sent message: "hej", at Lamport time: 6
+2024/10/24 20:03:43 User1 sent message: "User1 left the chat", at Lamport time: 10
+2024/10/24 20:03:43 Participant User1 left Chitty-Chat at Lamport time: 11
+2024/10/24 20:05:37 Started server at port: 8081
+2024/10/24 20:05:47 User1 sent message: "User1 joined the chat", at Lamport time: 2
+2024/10/24 20:05:47 Participant User1 joined Chitty-Chat at Lamport time: 3
+2024/10/24 20:05:53 User1 sent message: "hej", at Lamport time: 6
+2024/10/24 20:06:37 User1 sent message: "User1 left the chat", at Lamport time: 10
+2024/10/24 20:06:37 Participant User1 left Chitty-Chat at Lamport time: 10
+2024/10/24 20:07:33 Started server at port: 8081
+2024/10/24 20:07:40 User1 joined the chat sent message: "", at Lamport time: 2
+2024/10/24 20:07:40 Participant User1 joined Chitty-Chat at Lamport time: 3
+2024/10/24 20:07:45 User1 sent message: "hej", at Lamport time: 6
+2024/10/24 20:08:43 User1 left the chat sent message: "", at Lamport time: 10
+2024/10/24 20:08:43 Participant User1 left Chitty-Chat at Lamport time: 11
+2024/10/24 20:08:56 Started server at port: 8081
+2024/10/24 20:09:04 User1 sent message: "User1 joined the chat", at Lamport time: 2
+2024/10/24 20:09:04 Participant User1 joined Chitty-Chat at Lamport time: 3
+2024/10/24 20:09:15 User2 sent message: "User2 joined the chat", at Lamport time: 4
+2024/10/24 20:09:15 Participant User2 joined Chitty-Chat at Lamport time: 6
+2024/10/24 20:09:16 User2 sent message: "hej", at Lamport time: 9
+2024/10/24 20:09:28 User1 sent message: "hej", at Lamport time: 13
+2024/10/24 20:09:37 User2 sent message: "ses", at Lamport time: 18
+2024/10/24 20:09:38 User2 sent message: "User2 left the chat", at Lamport time: 23
+2024/10/24 20:09:38 Participant User2 left Chitty-Chat at Lamport time: 25
+2024/10/24 20:09:48 User1 sent message: "ses", at Lamport time: 27
+2024/10/24 20:09:51 User1 sent message: "User1 left the chat", at Lamport time: 31
+2024/10/24 20:09:51 Participant User1 left Chitty-Chat at Lamport time: 31
