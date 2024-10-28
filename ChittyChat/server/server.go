@@ -119,7 +119,7 @@ func (s *Server) Publish(context context.Context, in *proto.ChatMessage) (*proto
 	//Making sure goroutines gets to finish
 	wait := sync.WaitGroup{}
 
-	//Used to know if goroutines are finised
+	//Used to know if goroutines are finished
 	done := make(chan int)
 	if serverLamportTime < int64(in.TimeStamp) {
 		serverLamportTime = int64(in.TimeStamp)
@@ -132,7 +132,7 @@ func (s *Server) Publish(context context.Context, in *proto.ChatMessage) (*proto
 	for _, con := range s.users {
 		wait.Add(1)
 
-		fmt.Printf("Server Time: %v", serverLamportTime)
+		fmt.Printf("Server Time: %v " + "\n", serverLamportTime)
 		go func(content *proto.ChatMessage, con *Connection) {
 			serverLamportTime++
 			defer wait.Done()
