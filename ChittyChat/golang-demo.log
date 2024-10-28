@@ -83,3 +83,22 @@
 2024/10/28 14:07:18 User1 sent message: "hej hej", at Lamport time: 48
 2024/10/28 14:07:20 User1 sent message: "User1 left the chat", at Lamport time: 52
 2024/10/28 14:07:20 Participant User1 left Chitty-Chat at Lamport time: 52
+2024/10/28 14:26:44 Started server at port: 8081
+2024/10/28 14:26:53 Participant Oline joined Chitty-Chat at Lamport time: 0
+2024/10/28 14:26:53 Oline sent message: "Oline joined the chat", at Lamport time: 1
+2024/10/28 14:26:57 Oline sent message: "Hello", at Lamport time: 5
+2024/10/28 14:27:07 Participant Pernille joined Chitty-Chat at Lamport time: 7
+2024/10/28 14:27:07 Pernille sent message: "Pernille joined the chat", at Lamport time: 7
+2024/10/28 14:27:09 Pernille sent message: "Hi!", at Lamport time: 12
+2024/10/28 14:27:17 Participant Clara joined Chitty-Chat at Lamport time: 15
+2024/10/28 14:27:17 Clara sent message: "Clara joined the chat", at Lamport time: 15
+2024/10/28 14:27:22 Clara sent message: "What's up!", at Lamport time: 20
+2024/10/28 14:27:34 Oline sent message: "Gotta go! Byeeee", at Lamport time: 24
+2024/10/28 14:27:36 Oline sent message: "Oline left the chat", at Lamport time: 29
+2024/10/28 14:27:36 Participant Oline left Chitty-Chat at Lamport time: 30
+2024/10/28 14:27:48 Pernille sent message: "Nice to meet you, see ya!", at Lamport time: 34
+2024/10/28 14:27:50 Pernille sent message: "Pernille left the chat", at Lamport time: 38
+2024/10/28 14:27:50 Participant Pernille left Chitty-Chat at Lamport time: 40
+2024/10/28 14:28:09 Clara sent message: "Have a good day! Goodbye!!!", at Lamport time: 43
+2024/10/28 14:28:11 Clara sent message: "Clara left the chat", at Lamport time: 47
+2024/10/28 14:28:11 Participant Clara left Chitty-Chat at Lamport time: 47
