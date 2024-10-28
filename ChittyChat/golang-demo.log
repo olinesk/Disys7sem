@@ -65,3 +65,21 @@
 2024/10/24 20:09:48 User1 sent message: "ses", at Lamport time: 27
 2024/10/24 20:09:51 User1 sent message: "User1 left the chat", at Lamport time: 31
 2024/10/24 20:09:51 Participant User1 left Chitty-Chat at Lamport time: 31
+2024/10/28 14:05:29 Started server at port: 8081
+2024/10/28 14:05:36 Participant User1 joined Chitty-Chat at Lamport time: 0
+2024/10/28 14:05:36 User1 sent message: "User1 joined the chat", at Lamport time: 1
+2024/10/28 14:05:44 Participant User2 joined Chitty-Chat at Lamport time: 3
+2024/10/28 14:05:44 User2 sent message: "User2 joined the chat", at Lamport time: 3
+2024/10/28 14:05:47 User1 sent message: "hej", at Lamport time: 7
+2024/10/28 14:05:51 User2 sent message: "hej", at Lamport time: 12
+2024/10/28 14:06:13 User2 sent message: "hej", at Lamport time: 16
+2024/10/28 14:06:17 User2 sent message: "hej", at Lamport time: 21
+2024/10/28 14:06:22 User1 sent message: "hej", at Lamport time: 25
+2024/10/28 14:06:25 User1 sent message: "hej", at Lamport time: 29
+2024/10/28 14:07:08 User2 sent message: "hej", at Lamport time: 34
+2024/10/28 14:07:13 User2 sent message: "farvel", at Lamport time: 39
+2024/10/28 14:07:14 User2 sent message: "User2 left the chat", at Lamport time: 44
+2024/10/28 14:07:14 Participant User2 left Chitty-Chat at Lamport time: 47
+2024/10/28 14:07:18 User1 sent message: "hej hej", at Lamport time: 48
+2024/10/28 14:07:20 User1 sent message: "User1 left the chat", at Lamport time: 52
+2024/10/28 14:07:20 Participant User1 left Chitty-Chat at Lamport time: 52

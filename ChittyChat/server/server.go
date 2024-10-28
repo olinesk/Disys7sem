@@ -94,6 +94,8 @@ func (s *Server) Join(in *proto.Connect, stream proto.ChittyChat_JoinServer) err
 		error:  make(chan error),
 	}
 
+	log.Printf("Participant " + in.User.Name + " joined Chitty-Chat at Lamport time: " + "%v", serverLamportTime)
+
 	s.users[in.User.Name] = con
 
 	//Participants in chat get notified when new user joins
@@ -109,8 +111,6 @@ func (s *Server) Join(in *proto.Connect, stream proto.ChittyChat_JoinServer) err
 
 	s.Publish(con.stream.Context(), userJoinedChat)
 
-	log.Printf("Participant " + in.User.Name + " joined Chitty-Chat at Lamport time: " + "%v", serverLamportTime)
-
 	return <-con.error
 }
 
@@ -124,6 +124,8 @@ func (s *Server) Publish(context context.Context, in *proto.ChatMessage) (*proto
 	if serverLamportTime < int64(in.TimeStamp) {
 		serverLamportTime = int64(in.TimeStamp)
 	}
+
+	log.Printf(in.UserName + " sent message: \"" + in.Content + "\", at Lamport time: " + "%v", serverLamportTime)
 
 	serverLamportTime++
 
@@ -154,8 +156,6 @@ func (s *Server) Publish(context context.Context, in *proto.ChatMessage) (*proto
 			}
 		}(in, con)
 	}
-
-	log.Printf(in.UserName + " sent message: \"" + in.Content + "\", at Lamport time: " + "%v", serverLamportTime)
 
 	go func() {
 		wait.Wait()
