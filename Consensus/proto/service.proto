@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/olinesk/Disys7sem/proto";
+
+message Request {
+    int32 time = 1;
+    int32 id = 2;
+    string port = 3;
+    int32 timeRequest = 4;
+}
+
+message Reply {
+    string message = 1;
+    int32 timeStamp = 2;
+}
+
+service Receive {
+    rpc GetRequest (Request) returns (Reply);
+}
