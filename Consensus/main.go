@@ -29,15 +29,23 @@ func main() {
 	}
 
 	// Register your server struct
-	proto.RegisterConsensusServer(grpcServer, server)
+	proto.RegisterReceiveServer(grpcServer, server)
 
 	// Start serving
 	grpcServer.Serve(list)
 }
 
 type Server struct {
-	proto.UnimplementedConsensusServer
+	proto.UnimplementedReceiveServer
+	id int32
+	timeStamp int32
 
+
+}
+
+type Connection struct {
+	server proto.ReceiveClient
+	serverConnection *proto.ClientConn
 }
 
 func (s *Server) GetRequest (cnx context.Context, Message *proto.Request) (*proto.Reply, error) {
