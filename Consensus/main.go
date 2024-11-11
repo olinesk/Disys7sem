@@ -17,7 +17,7 @@ import (
 	proto "github.com/olinesk/Disys7sem/proto"
 )
 
-var grpcLog log.Logger
+//var grpcLog log.Logger
 var node_amount = 3
 
 type State int
@@ -70,7 +70,7 @@ func main() {
 	// Making a listener tcp on myPort
 	list, err := net.Listen("tcp", fmt.Sprintf(":%v", myPort))
 	if err != nil {
-		grpcLog.Fatalf("I'm sorry, I failed to listen to port %v :-(", err)
+		log.Fatalf("I'm sorry, I failed to listen to port %v :-(", err)
 	}
 	
 	// Make a grpc server
@@ -81,7 +81,7 @@ func main() {
 
 	go func ()  {
 		if err := grpcServer.Serve(list); err != nil {
-			grpcLog.Fatalf("Failed to serve %v, I'm sorry I let you down :-(", err)
+			log.Fatalf("Failed to serve %v, I'm sorry I let you down :-(", err)
 		}
 	}()
 
@@ -93,11 +93,11 @@ func main() {
 		}
 
 		var conn *grpc.ClientConn
-		grpcLog.Printf("Really trying to dial %v\n", port)
+		log.Printf("Really trying to dial %v\n", port)
 		conn, err := grpc.Dial(fmt.Sprintf(":%v", port), grpc.WithInsecure(), grpc.WithBlock())
 
 		if err != nil {
-			grpcLog.Fatalf("I'm so sorry man, could not connect to: %s", err)
+			log.Fatalf("I'm so sorry man, could not connect to: %s", err)
 		}
 
 		defer conn.Close()
@@ -109,7 +109,7 @@ func main() {
 	for {
 		if n.state == StoppedEating {
 			sleepTime(rand.IntN(10))
-			grpcLog.Printf("Try to take crit func dude: %v : %v\n", n.id, n.time)
+			log.Printf("Try to take crit func dude: %v : %v\n", n.id, n.time)
 			n.requestToEat()
 		}		
 	}
@@ -144,14 +144,25 @@ func (n *Node) requestToEat() {
 	var wG sync.WaitGroup
 
 	for _, client := range n.clients {
+		if client == nil {
+			log.Printf("Nobody came to my birthday:(")
+			continue
+		}
+
 		wG.Add(1)
 		go func (c proto.CakeServiceClient)  {
 			defer wG.Done()
 
-			reply, _ := c.EatCake(n.ctx, &req)
+			reply, err := c.EatCake(n.ctx, &req)
+        	if err != nil || reply == nil {
+            	log.Printf("Nobody want to eat the one piece of cake anymore:(: %v", err)
+            	return
+        	}
+
+			//reply, _ := c.EatCake(n.ctx, &req)
 
 			n.updateClock(reply.TimeStamp)
-			grpcLog.Printf("Reply from %d at time: %v", reply.Id, reply.TimeStamp)
+			log.Printf("Reply from %d at time: %v", reply.Id, reply.TimeStamp)
 		}(client)
 	}
 
@@ -164,11 +175,11 @@ func (n *Node) Eat() {
 
 	defer n.noMoreCakeForMe()
 
-	grpcLog.Printf("Eating... at time: %v", n.time)
+	log.Printf("Eating... at time: %v", n.time)
 
 	sleepTime(rand.IntN(10))
 
-	grpcLog.Printf("I'm done eating momma, at time: %v", n.time)
+	log.Printf("I'm done eating momma, at time: %v", n.time)
 }
 
 func (n *Node) noMoreCakeForMe() {
