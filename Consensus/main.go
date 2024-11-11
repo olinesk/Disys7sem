@@ -51,6 +51,7 @@ func main() {
 	defer f.Close()
 	log.SetOutput(f)
 
+
 	// Port
 	arg1, _ := strconv.ParseInt(os.Args[1], 10, 32)
 	myPort := int32(arg1) + 5001
@@ -109,7 +110,8 @@ func main() {
 	for {
 		if n.state == StoppedEating {
 			sleepTime(rand.IntN(10))
-			log.Printf("Try to take crit func dude: %v : %v\n", n.id, n.time)
+			log.Printf("Try to get to crit section/Trying to get to eat dude: %v : %v\n", n.id, n.time)
+			fmt.Printf("Try to get to crit section/Trying to get to eat dude: %v : %v\n", n.id, n.time)
 			n.requestToEat()
 		}		
 	}
@@ -145,7 +147,8 @@ func (n *Node) requestToEat() {
 
 	for _, client := range n.clients {
 		if client == nil {
-			log.Printf("Nobody came to my birthday:(")
+			log.Printf("Nobody came to my birthday :(")
+			fmt.Printf("Nobody came to my birthday :(" + "\n")
 			continue
 		}
 
@@ -155,7 +158,8 @@ func (n *Node) requestToEat() {
 
 			reply, err := c.EatCake(n.ctx, &req)
         	if err != nil || reply == nil {
-            	log.Printf("Nobody want to eat the one piece of cake anymore:(: %v", err)
+            	log.Printf("Nobody want to eat the one piece of cake anymore :( : %v", err)
+				fmt.Printf("Nobody want to eat the one piece of cake anymore :( : %v" + "\n", err)
             	return
         	}
 
@@ -163,6 +167,7 @@ func (n *Node) requestToEat() {
 
 			n.updateClock(reply.TimeStamp)
 			log.Printf("Reply from %d at time: %v", reply.Id, reply.TimeStamp)
+			fmt.Printf("Reply from %d at time: %v" + "\n", reply.Id, reply.TimeStamp)
 		}(client)
 	}
 
@@ -175,11 +180,13 @@ func (n *Node) Eat() {
 
 	defer n.noMoreCakeForMe()
 
-	log.Printf("Eating... at time: %v", n.time)
+	log.Printf("%d is eating at time: %v", n.id, n.time)
+	fmt.Printf("%d is eating at time: %v" + "\n", n.id, n.time)
 
 	sleepTime(rand.IntN(10))
 
-	log.Printf("I'm done eating momma, at time: %v", n.time)
+	log.Printf("I'm done (%d) eating momma, at time: %v", n.id, n.time)
+	fmt.Printf("I'm done (%d) eating momma, at time: %v" + "\n", n.id, n.time)
 }
 
 func (n *Node) noMoreCakeForMe() {
