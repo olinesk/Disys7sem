@@ -48,3 +48,577 @@
 2024/11/11 15:16:32 Reply from 5001 at time: 2
 2024/11/11 15:16:32 Reply from 5003 at time: 2
 2024/11/11 15:16:32 Eating... at time: 4
+2024/11/11 15:28:46 Really trying to dial 5002
+2024/11/11 15:28:53 Really trying to dial 5001
+2024/11/11 15:28:53 Really trying to dial 5003
+2024/11/11 15:28:56 Really trying to dial 5003
+2024/11/11 15:29:06 Really trying to dial 5001
+2024/11/11 15:29:06 Really trying to dial 5002
+2024/11/11 15:29:08 Try to take crit func dude: 5003 : 0
+2024/11/11 15:29:08 Reply from 5002 at time: 2
+2024/11/11 15:29:08 Reply from 5001 at time: 2
+2024/11/11 15:29:08 Eating... at time: 4
+2024/11/11 15:29:17 Try to take crit func dude: 5001 : 2
+2024/11/11 15:29:17 Reply from 5002 at time: 4
+2024/11/11 15:29:17 I'm done eating momma, at time: 5
+2024/11/11 15:29:17 Reply from 5003 at time: 5
+2024/11/11 15:29:17 Eating... at time: 6
+2024/11/11 15:29:18 Try to take crit func dude: 5002 : 4
+2024/11/11 15:29:18 Reply from 5003 at time: 6
+2024/11/11 15:29:20 Try to take crit func dude: 5003 : 6
+2024/11/11 15:29:26 I'm done eating momma, at time: 8
+2024/11/11 15:29:26 Reply from 5001 at time: 8
+2024/11/11 15:29:26 Reply from 5001 at time: 8
+2024/11/11 15:29:26 Eating... at time: 9
+2024/11/11 15:29:30 I'm done eating momma, at time: 9
+2024/11/11 15:29:30 Reply from 5002 at time: 9
+2024/11/11 15:29:30 Eating... at time: 10
+2024/11/11 15:29:33 Try to take crit func dude: 5002 : 9
+2024/11/11 15:29:33 Reply from 5001 at time: 11
+2024/11/11 15:29:34 Try to take crit func dude: 5001 : 11
+2024/11/11 15:29:39 I'm done eating momma, at time: 13
+2024/11/11 15:29:39 Reply from 5003 at time: 13
+2024/11/11 15:29:39 Reply from 5003 at time: 13
+2024/11/11 15:29:39 Eating... at time: 14
+2024/11/11 15:29:40 Try to take crit func dude: 5003 : 13
+2024/11/11 15:29:42 I'm done eating momma, at time: 15
+2024/11/11 15:29:42 Try to take crit func dude: 5002 : 15
+2024/11/11 15:29:42 Reply from 5002 at time: 15
+2024/11/11 15:29:42 Reply from 5002 at time: 15
+2024/11/11 15:29:42 Eating... at time: 17
+2024/11/11 15:29:49 I'm done eating momma, at time: 17
+2024/11/11 15:29:49 Reply from 5001 at time: 17
+2024/11/11 15:29:49 Eating... at time: 18
+2024/11/11 15:29:49 Reply from 5001 at time: 17
+2024/11/11 15:29:50 I'm done eating momma, at time: 18
+2024/11/11 15:29:50 Reply from 5003 at time: 18
+2024/11/11 15:29:50 Eating... at time: 19
+2024/11/11 15:29:53 Try to take crit func dude: 5003 : 18
+2024/11/11 15:29:53 Reply from 5001 at time: 20
+2024/11/11 15:29:54 Try to take crit func dude: 5001 : 20
+2024/11/11 15:29:57 I'm done eating momma, at time: 22
+2024/11/11 15:29:57 Reply from 5002 at time: 22
+2024/11/11 15:29:57 Reply from 5002 at time: 22
+2024/11/11 15:29:57 Eating... at time: 23
+2024/11/11 15:29:58 Try to take crit func dude: 5002 : 22
+2024/11/11 15:29:59 I'm done eating momma, at time: 24
+2024/11/11 15:29:59 Reply from 5003 at time: 24
+2024/11/11 15:29:59 Reply from 5003 at time: 24
+2024/11/11 15:29:59 Eating... at time: 25
+2024/11/11 15:30:00 Try to take crit func dude: 5003 : 24
+2024/11/11 15:30:08 I'm done eating momma, at time: 26
+2024/11/11 15:30:08 Reply from 5001 at time: 26
+2024/11/11 15:30:08 Reply from 5001 at time: 26
+2024/11/11 15:30:08 Eating... at time: 27
+2024/11/11 15:30:10 Try to take crit func dude: 5001 : 26
+2024/11/11 15:30:14 I'm done eating momma, at time: 28
+2024/11/11 15:30:14 Reply from 5002 at time: 28
+2024/11/11 15:30:14 Eating... at time: 29
+2024/11/11 15:30:14 I'm done eating momma, at time: 29
+2024/11/11 15:30:14 Reply from 5002 at time: 28
+2024/11/11 15:30:14 Reply from 5003 at time: 29
+2024/11/11 15:30:14 Eating... at time: 30
+2024/11/11 15:30:17 Try to take crit func dude: 5003 : 29
+2024/11/11 15:30:17 Reply from 5002 at time: 31
+2024/11/11 15:30:19 Try to take crit func dude: 5002 : 31
+2024/11/11 15:30:20 I'm done eating momma, at time: 33
+2024/11/11 15:30:20 Reply from 5001 at time: 33
+2024/11/11 15:30:20 Reply from 5001 at time: 33
+2024/11/11 15:30:20 Eating... at time: 34
+2024/11/11 15:30:25 I'm done eating momma, at time: 34
+2024/11/11 15:30:25 Reply from 5003 at time: 34
+2024/11/11 15:30:25 Eating... at time: 35
+2024/11/11 15:30:26 Try to take crit func dude: 5001 : 33
+2024/11/11 15:30:26 Reply from 5003 at time: 35
+2024/11/11 15:30:26 Try to take crit func dude: 5003 : 35
+2024/11/11 15:30:29 I'm done eating momma, at time: 37
+2024/11/11 15:30:29 Reply from 5002 at time: 37
+2024/11/11 15:30:29 Reply from 5002 at time: 37
+2024/11/11 15:30:29 Eating... at time: 38
+2024/11/11 15:30:32 I'm done eating momma, at time: 38
+2024/11/11 15:30:32 Reply from 5001 at time: 38
+2024/11/11 15:30:32 Eating... at time: 39
+2024/11/11 15:30:36 Try to take crit func dude: 5002 : 37
+2024/11/11 15:30:36 Reply from 5001 at time: 39
+2024/11/11 15:30:39 I'm done eating momma, at time: 40
+2024/11/11 15:30:42 Try to take crit func dude: 5003 : 40
+2024/11/11 15:30:42 Nobody want to eat the one piece of cake anymore:(: rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5001: connect: connection refused"
+2024/11/11 15:30:42 Nobody want to eat the one piece of cake anymore:(: rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5002: connect: connection refused"
+2024/11/11 15:30:42 Eating... at time: 41
+2024/11/11 15:35:30 Really trying to dial 5002
+2024/11/11 15:35:35 Really trying to dial 5001
+2024/11/11 15:35:35 Really trying to dial 5003
+2024/11/11 15:35:36 Really trying to dial 5003
+2024/11/11 15:35:41 Really trying to dial 5001
+2024/11/11 15:35:41 Really trying to dial 5002
+2024/11/11 15:35:48 Try to take crit func dude: 5002 : 0
+2024/11/11 15:35:48 Reply from 5001 at time: 2
+2024/11/11 15:35:48 Reply from 5003 at time: 2
+2024/11/11 15:35:48 Eating... at time: 4
+2024/11/11 15:35:48 Try to take crit func dude: 5003 : 2
+2024/11/11 15:35:48 Reply from 5001 at time: 4
+2024/11/11 15:35:49 Try to take crit func dude: 5001 : 4
+2024/11/11 15:35:56 I'm done eating momma, at time: 6
+2024/11/11 15:35:56 Reply from 5002 at time: 6
+2024/11/11 15:35:56 Reply from 5002 at time: 6
+2024/11/11 15:35:56 Eating... at time: 7
+2024/11/11 15:35:57 Try to take crit func dude: 5002 : 6
+2024/11/11 15:35:57 I'm done eating momma, at time: 7
+2024/11/11 15:35:57 Reply from 5003 at time: 8
+2024/11/11 15:35:57 Reply from 5003 at time: 7
+2024/11/11 15:35:57 Eating... at time: 9
+2024/11/11 15:35:59 I'm done eating momma, at time: 9
+2024/11/11 15:35:59 Reply from 5001 at time: 9
+2024/11/11 15:35:59 Eating... at time: 10
+2024/11/11 15:36:01 Try to take crit func dude: 5003 : 8
+2024/11/11 15:36:01 Reply from 5001 at time: 10
+2024/11/11 15:36:03 I'm done eating momma, at time: 11
+2024/11/11 15:36:03 Try to take crit func dude: 5001 : 10
+2024/11/11 15:36:03 Reply from 5002 at time: 11
+2024/11/11 15:36:03 Eating... at time: 12
+2024/11/11 15:36:03 Reply from 5002 at time: 12
+2024/11/11 15:36:04 I'm done eating momma, at time: 13
+2024/11/11 15:36:04 Reply from 5003 at time: 13
+2024/11/11 15:36:04 Eating... at time: 14
+2024/11/11 15:36:06 Try to take crit func dude: 5002 : 12
+2024/11/11 15:36:06 Reply from 5003 at time: 14
+2024/11/11 15:36:11 Try to take crit func dude: 5003 : 14
+2024/11/11 15:36:11 I'm done eating momma, at time: 15
+2024/11/11 15:36:11 Try to take crit func dude: 5001 : 15
+2024/11/11 15:36:11 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = error reading from server: read tcp 127.0.0.1:64505->127.0.0.1:5001: read: connection reset by peer
+2024/11/11 15:36:11 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = error reading from server: EOF
+2024/11/11 15:36:11 Eating... at time: 16
+2024/11/11 15:36:17 I'm done eating momma, at time: 16
+2024/11/11 15:36:17 Reply from 5002 at time: 16
+2024/11/11 15:36:17 Eating... at time: 17
+2024/11/11 15:36:26 Try to take crit func dude: 5002 : 16
+2024/11/11 15:36:26 I'm done eating momma, at time: 18
+2024/11/11 15:36:26 Try to take crit func dude: 5003 : 18
+2024/11/11 15:36:26 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5001: connect: connection refused"
+2024/11/11 15:36:26 Reply from 5003 at time: 18
+2024/11/11 15:36:26 Eating... at time: 19
+2024/11/11 15:36:26 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5001: connect: connection refused"
+2024/11/11 15:36:35 I'm done eating momma, at time: 20
+2024/11/11 15:36:35 Try to take crit func dude: 5002 : 20
+2024/11/11 15:36:35 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5001: connect: connection refused"
+2024/11/11 15:36:35 Reply from 5002 at time: 20
+2024/11/11 15:36:35 Eating... at time: 22
+2024/11/11 15:36:44 I'm done eating momma, at time: 22
+2024/11/11 15:36:44 Reply from 5003 at time: 22
+2024/11/11 15:36:44 Eating... at time: 23
+2024/11/11 15:36:45 Try to take crit func dude: 5003 : 22
+2024/11/11 15:36:45 I'm done eating momma, at time: 23
+2024/11/11 15:36:45 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5001: connect: connection refused"
+2024/11/11 15:36:45 Reply from 5002 at time: 24
+2024/11/11 15:36:45 Eating... at time: 25
+2024/11/11 15:36:51 Try to take crit func dude: 5002 : 24
+2024/11/11 15:36:51 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5001: connect: connection refused"
+2024/11/11 15:36:54 I'm done eating momma, at time: 26
+2024/11/11 15:36:54 Reply from 5003 at time: 26
+2024/11/11 15:36:54 Eating... at time: 27
+2024/11/11 15:36:58 I'm done eating momma, at time: 27
+2024/11/11 15:37:00 Try to take crit func dude: 5002 : 27
+2024/11/11 15:37:00 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5001: connect: connection refused"
+2024/11/11 15:37:00 Reply from 5003 at time: 29
+2024/11/11 15:37:00 Eating... at time: 30
+2024/11/11 15:37:02 Try to take crit func dude: 5003 : 29
+2024/11/11 15:37:02 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5001: connect: connection refused"
+2024/11/11 15:37:04 I'm done eating momma, at time: 31
+2024/11/11 15:37:04 Reply from 5002 at time: 31
+2024/11/11 15:37:04 Eating... at time: 32
+2024/11/11 15:37:05 I'm done eating momma, at time: 32
+2024/11/11 15:37:06 Try to take crit func dude: 5002 : 31
+2024/11/11 15:37:06 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5001: connect: connection refused"
+2024/11/11 15:37:06 Reply from 5003 at time: 33
+2024/11/11 15:37:06 Eating... at time: 34
+2024/11/11 15:37:06 I'm done eating momma, at time: 34
+2024/11/11 15:37:10 Try to take crit func dude: 5002 : 34
+2024/11/11 15:37:10 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5001: connect: connection refused"
+2024/11/11 15:37:10 Reply from 5003 at time: 36
+2024/11/11 15:37:10 Eating... at time: 37
+2024/11/11 15:37:14 Try to take crit func dude: 5003 : 36
+2024/11/11 15:37:14 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5001: connect: connection refused"
+2024/11/11 15:37:15 I'm done eating momma, at time: 38
+2024/11/11 15:37:15 Try to take crit func dude: 5002 : 38
+2024/11/11 15:37:15 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = error reading from server: EOF
+2024/11/11 15:37:15 Eating... at time: 37
+2024/11/11 15:37:45 Really trying to dial 5002
+2024/11/11 15:37:48 Really trying to dial 5001
+2024/11/11 15:37:48 Really trying to dial 5003
+2024/11/11 15:37:48 Really trying to dial 5003
+2024/11/11 15:37:52 Really trying to dial 5001
+2024/11/11 15:37:52 Really trying to dial 5002
+2024/11/11 15:37:53 Try to take crit func dude: 5001 : 0
+2024/11/11 15:37:53 Reply from 5002 at time: 2
+2024/11/11 15:37:53 Reply from 5003 at time: 2
+2024/11/11 15:37:53 Eating... at time: 4
+2024/11/11 15:37:54 Try to take crit func dude: 5003 : 2
+2024/11/11 15:37:54 Reply from 5002 at time: 4
+2024/11/11 15:37:57 I'm done eating momma, at time: 5
+2024/11/11 15:37:57 Reply from 5001 at time: 5
+2024/11/11 15:37:57 Eating... at time: 6
+2024/11/11 15:37:59 I'm done eating momma, at time: 6
+2024/11/11 15:38:00 Try to take crit func dude: 5003 : 6
+2024/11/11 15:38:00 Reply from 5001 at time: 8
+2024/11/11 15:38:00 Reply from 5002 at time: 8
+2024/11/11 15:38:00 Eating... at time: 10
+2024/11/11 15:38:03 Try to take crit func dude: 5002 : 8
+2024/11/11 15:38:03 Reply from 5001 at time: 10
+2024/11/11 15:38:03 Try to take crit func dude: 5001 : 10
+2024/11/11 15:38:07 I'm done eating momma, at time: 12
+2024/11/11 15:38:07 Reply from 5003 at time: 12
+2024/11/11 15:38:07 Reply from 5003 at time: 12
+2024/11/11 15:38:07 Eating... at time: 13
+2024/11/11 15:38:10 I'm done eating momma, at time: 13
+2024/11/11 15:38:10 Reply from 5002 at time: 13
+2024/11/11 15:38:10 Eating... at time: 14
+2024/11/11 15:38:13 Try to take crit func dude: 5003 : 12
+2024/11/11 15:38:13 Reply from 5002 at time: 14
+2024/11/11 15:38:18 I'm done eating momma, at time: 15
+2024/11/11 15:38:18 Reply from 5001 at time: 15
+2024/11/11 15:38:18 Eating... at time: 16
+2024/11/11 15:38:19 Try to take crit func dude: 5002 : 14
+2024/11/11 15:38:19 Reply from 5001 at time: 16
+2024/11/11 15:38:25 I'm done eating momma, at time: 17
+2024/11/11 15:38:25 Reply from 5003 at time: 17
+2024/11/11 15:38:25 Eating... at time: 18
+2024/11/11 15:38:27 Try to take crit func dude: 5001 : 16
+2024/11/11 15:38:27 Reply from 5003 at time: 18
+2024/11/11 15:38:32 I'm done eating momma, at time: 19
+2024/11/11 15:38:32 Reply from 5002 at time: 19
+2024/11/11 15:38:32 Eating... at time: 20
+2024/11/11 15:38:33 Try to take crit func dude: 5002 : 19
+2024/11/11 15:38:33 Reply from 5003 at time: 21
+2024/11/11 15:38:34 Try to take crit func dude: 5003 : 21
+2024/11/11 15:38:37 I'm done eating momma, at time: 23
+2024/11/11 15:38:37 Reply from 5001 at time: 23
+2024/11/11 15:38:37 Reply from 5001 at time: 23
+2024/11/11 15:38:37 Eating... at time: 24
+2024/11/11 15:38:39 Try to take crit func dude: 5001 : 23
+2024/11/11 15:38:42 I'm done eating momma, at time: 25
+2024/11/11 15:38:42 Reply from 5002 at time: 25
+2024/11/11 15:38:42 Reply from 5002 at time: 25
+2024/11/11 15:38:42 Eating... at time: 26
+2024/11/11 15:38:46 Try to take crit func dude: 5002 : 25
+2024/11/11 15:38:51 I'm done eating momma, at time: 27
+2024/11/11 15:38:51 Reply from 5003 at time: 27
+2024/11/11 15:38:51 Reply from 5003 at time: 27
+2024/11/11 15:38:51 Eating... at time: 28
+2024/11/11 15:38:51 I'm done eating momma, at time: 28
+2024/11/11 15:38:51 Reply from 5001 at time: 28
+2024/11/11 15:38:51 Eating... at time: 29
+2024/11/11 15:38:52 Try to take crit func dude: 5003 : 27
+2024/11/11 15:38:52 I'm done eating momma, at time: 29
+2024/11/11 15:38:52 Reply from 5001 at time: 29
+2024/11/11 15:38:52 Reply from 5002 at time: 30
+2024/11/11 15:38:52 Eating... at time: 31
+2024/11/11 15:38:53 Try to take crit func dude: 5001 : 29
+2024/11/11 15:38:53 Reply from 5002 at time: 31
+2024/11/11 15:38:56 Try to take crit func dude: 5002 : 31
+2024/11/11 15:38:59 I'm done eating momma, at time: 33
+2024/11/11 15:38:59 Reply from 5003 at time: 33
+2024/11/11 15:38:59 Reply from 5003 at time: 33
+2024/11/11 15:38:59 Eating... at time: 34
+2024/11/11 15:39:03 Try to take crit func dude: 5003 : 33
+2024/11/11 15:39:07 I'm done eating momma, at time: 35
+2024/11/11 15:39:07 Reply from 5001 at time: 35
+2024/11/11 15:39:07 Reply from 5001 at time: 35
+2024/11/11 15:39:07 Eating... at time: 36
+2024/11/11 15:39:13 Try to take crit func dude: 5001 : 35
+2024/11/11 15:39:14 I'm done eating momma, at time: 37
+2024/11/11 15:39:14 Reply from 5002 at time: 37
+2024/11/11 15:39:14 Reply from 5002 at time: 37
+2024/11/11 15:39:14 Eating... at time: 38
+2024/11/11 15:39:14 I'm done eating momma, at time: 38
+2024/11/11 15:39:14 Reply from 5003 at time: 38
+2024/11/11 15:39:14 Eating... at time: 39
+2024/11/11 15:39:20 Try to take crit func dude: 5003 : 38
+2024/11/11 15:39:20 Reply from 5002 at time: 40
+2024/11/11 15:39:21 I'm done eating momma, at time: 40
+2024/11/11 15:39:21 Reply from 5001 at time: 40
+2024/11/11 15:39:21 Eating... at time: 42
+2024/11/11 15:39:22 Try to take crit func dude: 5002 : 40
+2024/11/11 15:39:22 Reply from 5001 at time: 42
+2024/11/11 15:39:23 I'm done eating momma, at time: 43
+2024/11/11 15:39:23 Try to take crit func dude: 5003 : 43
+2024/11/11 15:39:23 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = error reading from server: EOF
+2024/11/11 15:39:23 Eating... at time: 43
+2024/11/11 15:39:26 Try to take crit func dude: 5001 : 42
+2024/11/11 15:39:26 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5003: connect: connection refused"
+2024/11/11 15:39:31 I'm done eating momma, at time: 44
+2024/11/11 15:39:31 Try to take crit func dude: 5002 : 44
+2024/11/11 15:39:31 Reply from 5002 at time: 45
+2024/11/11 15:39:31 Eating... at time: 47
+2024/11/11 15:39:31 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5003: connect: connection refused"
+2024/11/11 15:39:38 I'm done eating momma, at time: 47
+2024/11/11 15:39:38 Reply from 5001 at time: 47
+2024/11/11 15:39:38 Eating... at time: 48
+2024/11/11 15:39:40 I'm done eating momma, at time: 48
+2024/11/11 15:39:43 Try to take crit func dude: 5002 : 48
+2024/11/11 15:39:43 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5003: connect: connection refused"
+2024/11/11 15:39:43 Reply from 5001 at time: 50
+2024/11/11 15:39:43 Eating... at time: 51
+2024/11/11 15:39:44 Try to take crit func dude: 5001 : 50
+2024/11/11 15:39:44 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5003: connect: connection refused"
+2024/11/11 15:39:51 I'm done eating momma, at time: 52
+2024/11/11 15:39:51 Reply from 5002 at time: 52
+2024/11/11 15:39:51 Eating... at time: 53
+2024/11/11 15:39:52 I'm done eating momma, at time: 53
+2024/11/11 15:39:54 Try to take crit func dude: 5002 : 52
+2024/11/11 15:39:54 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5003: connect: connection refused"
+2024/11/11 15:39:54 Reply from 5001 at time: 54
+2024/11/11 15:39:54 Eating... at time: 55
+2024/11/11 15:39:55 I'm done eating momma, at time: 55
+2024/11/11 15:40:01 Try to take crit func dude: 5002 : 55
+2024/11/11 15:40:01 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5003: connect: connection refused"
+2024/11/11 15:40:01 Try to take crit func dude: 5001 : 54
+2024/11/11 15:40:01 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5003: connect: connection refused"
+2024/11/11 15:41:30 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = error reading from server: EOF
+2024/11/11 15:41:30 Eating... at time: 57
+2024/11/11 15:41:33 I'm done eating momma, at time: 57
+2024/11/11 15:41:47 Really trying to dial 5002
+2024/11/11 15:41:53 Really trying to dial 5001
+2024/11/11 15:41:53 Really trying to dial 5003
+2024/11/11 15:41:56 Really trying to dial 5003
+2024/11/11 15:42:00 Really trying to dial 5001
+2024/11/11 15:42:00 Really trying to dial 5002
+2024/11/11 15:42:02 Try to get to crit section/Trying to get to eat dude: 5002 : 0
+2024/11/11 15:42:02 Reply from 5003 at time: 2
+2024/11/11 15:42:02 Reply from 5001 at time: 2
+2024/11/11 15:42:02 Eating... at time: 4
+2024/11/11 15:42:03 Try to get to crit section/Trying to get to eat dude: 5003 : 2
+2024/11/11 15:42:03 Reply from 5001 at time: 4
+2024/11/11 15:42:06 I'm done eating momma, at time: 5
+2024/11/11 15:42:06 Reply from 5002 at time: 5
+2024/11/11 15:42:06 Eating... at time: 6
+2024/11/11 15:42:09 Try to get to crit section/Trying to get to eat dude: 5001 : 4
+2024/11/11 15:42:09 Reply from 5002 at time: 6
+2024/11/11 15:42:10 I'm done eating momma, at time: 7
+2024/11/11 15:42:10 Reply from 5003 at time: 7
+2024/11/11 15:42:10 Eating... at time: 8
+2024/11/11 15:42:15 Try to get to crit section/Trying to get to eat dude: 5002 : 6
+2024/11/11 15:42:15 Reply from 5003 at time: 8
+2024/11/11 15:42:16 Try to get to crit section/Trying to get to eat dude: 5003 : 8
+2024/11/11 15:42:19 I'm done eating momma, at time: 10
+2024/11/11 15:42:19 Reply from 5001 at time: 10
+2024/11/11 15:42:19 Reply from 5001 at time: 10
+2024/11/11 15:42:19 Eating... at time: 11
+2024/11/11 15:42:25 Try to get to crit section/Trying to get to eat dude: 5001 : 10
+2024/11/11 15:42:25 I'm done eating momma, at time: 11
+2024/11/11 15:42:25 Reply from 5002 at time: 11
+2024/11/11 15:42:25 Eating... at time: 13
+2024/11/11 15:42:25 Reply from 5002 at time: 12
+2024/11/11 15:42:27 I'm done eating momma, at time: 13
+2024/11/11 15:42:27 Reply from 5003 at time: 13
+2024/11/11 15:42:27 Eating... at time: 14
+2024/11/11 15:42:28 Try to get to crit section/Trying to get to eat dude: 5002 : 12
+2024/11/11 15:42:28 Reply from 5003 at time: 14
+2024/11/11 15:42:30 I'm done eating momma, at time: 15
+2024/11/11 15:42:30 Try to get to crit section/Trying to get to eat dude: 5001 : 15
+2024/11/11 15:42:30 Reply from 5001 at time: 15
+2024/11/11 15:42:30 Eating... at time: 17
+2024/11/11 15:42:30 Reply from 5003 at time: 17
+2024/11/11 15:42:33 I'm done eating momma, at time: 17
+2024/11/11 15:42:33 Reply from 5002 at time: 17
+2024/11/11 15:42:33 Eating... at time: 19
+2024/11/11 15:42:34 Try to get to crit section/Trying to get to eat dude: 5003 : 17
+2024/11/11 15:42:34 Reply from 5002 at time: 19
+2024/11/11 15:42:34 Try to get to crit section/Trying to get to eat dude: 5002 : 19
+2024/11/11 15:42:37 I'm done eating momma, at time: 21
+2024/11/11 15:42:37 Reply from 5001 at time: 21
+2024/11/11 15:42:37 Reply from 5001 at time: 21
+2024/11/11 15:42:37 Eating... at time: 22
+2024/11/11 15:42:38 I'm done eating momma, at time: 22
+2024/11/11 15:42:38 Reply from 5003 at time: 22
+2024/11/11 15:42:38 Eating... at time: 23
+2024/11/11 15:42:39 I'm done eating momma, at time: 23
+2024/11/11 15:42:43 Try to get to crit section/Trying to get to eat dude: 5001 : 21
+2024/11/11 15:42:43 Reply from 5003 at time: 23
+2024/11/11 15:42:43 Reply from 5002 at time: 24
+2024/11/11 15:42:43 Eating... at time: 25
+2024/11/11 15:42:44 Try to get to crit section/Trying to get to eat dude: 5003 : 23
+2024/11/11 15:42:44 Try to get to crit section/Trying to get to eat dude: 5002 : 25
+2024/11/11 15:42:44 Reply from 5002 at time: 25
+2024/11/11 15:42:52 I'm done eating momma, at time: 27
+2024/11/11 15:42:52 Reply from 5001 at time: 27
+2024/11/11 15:42:52 Reply from 5001 at time: 27
+2024/11/11 15:42:52 Eating... at time: 28
+2024/11/11 15:42:54 Try to get to crit section/Trying to get to eat dude: 5001 : 27
+2024/11/11 15:42:54 I'm done eating momma, at time: 28
+2024/11/11 15:42:54 Reply from 5003 at time: 28
+2024/11/11 15:42:54 Reply from 5003 at time: 29
+2024/11/11 15:42:54 Eating... at time: 30
+2024/11/11 15:42:56 I'm done eating momma, at time: 30
+2024/11/11 15:42:56 Reply from 5002 at time: 30
+2024/11/11 15:42:56 Eating... at time: 31
+2024/11/11 15:42:59 I'm done eating momma, at time: 31
+2024/11/11 15:42:59 Try to get to crit section/Trying to get to eat dude: 5001 : 31
+2024/11/11 15:42:59 Reply from 5003 at time: 33
+2024/11/11 15:42:59 Reply from 5002 at time: 33
+2024/11/11 15:42:59 Eating... at time: 35
+2024/11/11 15:43:01 Try to get to crit section/Trying to get to eat dude: 5002 : 33
+2024/11/11 15:43:01 Reply from 5003 at time: 35
+2024/11/11 15:43:03 Try to get to crit section/Trying to get to eat dude: 5003 : 35
+2024/11/11 15:43:05 I'm done eating momma, at time: 37
+2024/11/11 15:43:05 Reply from 5001 at time: 37
+2024/11/11 15:43:05 Eating... at time: 38
+2024/11/11 15:43:05 Reply from 5001 at time: 37
+2024/11/11 15:43:05 I'm done eating momma, at time: 38
+2024/11/11 15:43:05 Reply from 5002 at time: 38
+2024/11/11 15:43:05 Eating... at time: 39
+2024/11/11 15:43:07 Try to get to crit section/Trying to get to eat dude: 5001 : 37
+2024/11/11 15:43:07 Reply from 5002 at time: 39
+2024/11/11 15:43:10 I'm done eating momma, at time: 40
+2024/11/11 15:43:10 Try to get to crit section/Trying to get to eat dude: 5003 : 40
+2024/11/11 15:43:10 Reply from 5003 at time: 40
+2024/11/11 15:43:10 Eating... at time: 43
+2024/11/11 15:43:10 Reply from 5002 at time: 42
+2024/11/11 15:43:14 Try to get to crit section/Trying to get to eat dude: 5002 : 42
+2024/11/11 15:43:15 I'm done eating momma, at time: 44
+2024/11/11 15:43:15 Reply from 5001 at time: 44
+2024/11/11 15:43:15 Reply from 5001 at time: 44
+2024/11/11 15:43:15 Eating... at time: 45
+2024/11/11 15:43:23 I'm done eating momma, at time: 45
+2024/11/11 15:43:23 Try to get to crit section/Trying to get to eat dude: 5003 : 45
+2024/11/11 15:43:23 Reply from 5003 at time: 45
+2024/11/11 15:43:23 Eating... at time: 47
+2024/11/11 15:43:23 Reply from 5001 at time: 47
+2024/11/11 15:43:24 Try to get to crit section/Trying to get to eat dude: 5001 : 47
+2024/11/11 15:43:25 I'm done eating momma, at time: 49
+2024/11/11 15:43:25 Reply from 5002 at time: 49
+2024/11/11 15:43:25 Reply from 5002 at time: 49
+2024/11/11 15:43:25 Eating... at time: 50
+2024/11/11 15:43:26 I'm done eating momma, at time: 50
+2024/11/11 15:43:26 Reply from 5003 at time: 50
+2024/11/11 15:43:26 Eating... at time: 51
+2024/11/11 15:43:29 Try to get to crit section/Trying to get to eat dude: 5003 : 50
+2024/11/11 15:43:29 Reply from 5002 at time: 52
+2024/11/11 15:43:32 Try to get to crit section/Trying to get to eat dude: 5002 : 52
+2024/11/11 15:43:32 I'm done eating momma, at time: 54
+2024/11/11 15:43:32 Reply from 5001 at time: 54
+2024/11/11 15:43:32 Reply from 5001 at time: 54
+2024/11/11 15:43:32 Eating... at time: 55
+2024/11/11 15:43:32 I'm done eating momma, at time: 55
+2024/11/11 15:43:32 Reply from 5003 at time: 55
+2024/11/11 15:43:32 Eating... at time: 56
+2024/11/11 15:43:34 Try to get to crit section/Trying to get to eat dude: 5003 : 55
+2024/11/11 15:43:34 Reply from 5001 at time: 57
+2024/11/11 15:43:40 Try to get to crit section/Trying to get to eat dude: 5001 : 57
+2024/11/11 15:43:41 I'm done eating momma, at time: 59
+2024/11/11 15:43:41 Reply from 5002 at time: 59
+2024/11/11 15:43:41 Reply from 5002 at time: 59
+2024/11/11 15:43:41 Eating... at time: 60
+2024/11/11 15:43:42 Try to get to crit section/Trying to get to eat dude: 5002 : 59
+2024/11/11 15:43:48 I'm done eating momma, at time: 61
+2024/11/11 15:43:48 Reply from 5003 at time: 61
+2024/11/11 15:43:48 Eating... at time: 62
+2024/11/11 15:43:48 Reply from 5003 at time: 61
+2024/11/11 15:43:49 I'm done eating momma, at time: 62
+2024/11/11 15:43:49 Reply from 5001 at time: 62
+2024/11/11 15:43:49 Eating... at time: 63
+2024/11/11 15:43:54 Try to get to crit section/Trying to get to eat dude: 5001 : 62
+2024/11/11 15:43:54 I'm done eating momma, at time: 64
+2024/11/11 15:43:54 Reply from 5002 at time: 64
+2024/11/11 15:43:54 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5003: connect: connection refused"
+2024/11/11 15:43:54 Eating... at time: 65
+2024/11/11 15:43:55 I'm done eating momma, at time: 65
+2024/11/11 15:43:58 Try to get to crit section/Trying to get to eat dude: 5002 : 64
+2024/11/11 15:43:58 Try to get to crit section/Trying to get to eat dude: 5001 : 65
+2024/11/11 15:43:58 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5003: connect: connection refused"
+2024/11/11 15:43:58 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5003: connect: connection refused"
+2024/11/11 15:46:00 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = error reading from server: EOF
+2024/11/11 15:46:00 Eating... at time: 67
+2024/11/11 15:46:08 I'm done eating momma, at time: 67
+2024/11/11 15:46:15 Really trying to dial 5002
+2024/11/11 15:46:15 Really trying to dial 5003
+2024/11/11 15:46:17 Try to get to crit section/Trying to get to eat dude: 5002 : 67
+2024/11/11 15:46:17 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :5003: connect: connection refused"
+2024/11/11 15:46:18 Reply from 5001 at time: 69
+2024/11/11 15:46:18 Eating... at time: 70
+2024/11/11 15:46:24 Really trying to dial 5001
+2024/11/11 15:46:24 Really trying to dial 5003
+2024/11/11 15:46:31 Really trying to dial 5001
+2024/11/11 15:46:31 Really trying to dial 5002
+2024/11/11 15:46:34 Try to get to crit section/Trying to get to eat dude: 5002 : 0
+2024/11/11 15:46:34 Reply from 5001 at time: 70
+2024/11/11 15:46:34 Reply from 5003 at time: 2
+2024/11/11 15:46:34 5002 is eating at time: 72
+2024/11/11 15:46:37 Try to get to crit section/Trying to get to eat dude: 5003 : 2
+2024/11/11 15:46:37 Reply from 5001 at time: 71
+2024/11/11 15:46:39 I'm done (5002) eating momma, at time: 73
+2024/11/11 15:46:39 Try to get to crit section/Trying to get to eat dude: 5002 : 73
+2024/11/11 15:46:39 Reply from 5002 at time: 73
+2024/11/11 15:46:39 5003 is eating at time: 76
+2024/11/11 15:46:39 Reply from 5001 at time: 75
+2024/11/11 15:46:41 Try to get to crit section/Trying to get to eat dude: 5001 : 75
+2024/11/11 15:46:43 I'm done (5003) eating momma, at time: 77
+2024/11/11 15:46:43 Reply from 5003 at time: 77
+2024/11/11 15:46:43 Reply from 5003 at time: 77
+2024/11/11 15:46:43 5002 is eating at time: 78
+2024/11/11 15:46:44 Try to get to crit section/Trying to get to eat dude: 5003 : 77
+2024/11/11 15:46:52 I'm done (5002) eating momma, at time: 79
+2024/11/11 15:46:52 Reply from 5002 at time: 79
+2024/11/11 15:46:52 Reply from 5002 at time: 79
+2024/11/11 15:46:52 5001 is eating at time: 80
+2024/11/11 15:46:54 Try to get to crit section/Trying to get to eat dude: 5002 : 79
+2024/11/11 15:46:55 I'm done (5001) eating momma, at time: 81
+2024/11/11 15:46:55 Reply from 5001 at time: 81
+2024/11/11 15:46:55 Reply from 5001 at time: 81
+2024/11/11 15:46:55 5003 is eating at time: 82
+2024/11/11 15:46:56 Try to get to crit section/Trying to get to eat dude: 5001 : 81
+2024/11/11 15:46:58 I'm done (5003) eating momma, at time: 83
+2024/11/11 15:46:58 Reply from 5003 at time: 83
+2024/11/11 15:46:58 Reply from 5003 at time: 83
+2024/11/11 15:46:58 5002 is eating at time: 84
+2024/11/11 15:47:00 Try to get to crit section/Trying to get to eat dude: 5003 : 83
+2024/11/11 15:47:02 I'm done (5002) eating momma, at time: 85
+2024/11/11 15:47:02 Reply from 5002 at time: 85
+2024/11/11 15:47:02 Reply from 5002 at time: 85
+2024/11/11 15:47:02 5001 is eating at time: 86
+2024/11/11 15:47:08 Try to get to crit section/Trying to get to eat dude: 5002 : 85
+2024/11/11 15:47:11 I'm done (5001) eating momma, at time: 87
+2024/11/11 15:47:11 Reply from 5001 at time: 87
+2024/11/11 15:47:11 Reply from 5001 at time: 87
+2024/11/11 15:47:11 5003 is eating at time: 88
+2024/11/11 15:47:16 Try to get to crit section/Trying to get to eat dude: 5001 : 87
+2024/11/11 15:47:17 I'm done (5003) eating momma, at time: 89
+2024/11/11 15:47:17 Reply from 5003 at time: 89
+2024/11/11 15:47:17 Reply from 5003 at time: 89
+2024/11/11 15:47:17 5002 is eating at time: 90
+2024/11/11 15:47:19 Try to get to crit section/Trying to get to eat dude: 5003 : 89
+2024/11/11 15:47:25 I'm done (5002) eating momma, at time: 91
+2024/11/11 15:47:25 Try to get to crit section/Trying to get to eat dude: 5002 : 91
+2024/11/11 15:47:25 Reply from 5002 at time: 91
+2024/11/11 15:47:25 Reply from 5002 at time: 91
+2024/11/11 15:47:25 5001 is eating at time: 92
+2024/11/11 15:47:30 I'm done (5001) eating momma, at time: 93
+2024/11/11 15:47:30 Reply from 5001 at time: 93
+2024/11/11 15:47:30 Reply from 5001 at time: 93
+2024/11/11 15:47:30 5003 is eating at time: 94
+2024/11/11 15:47:37 Try to get to crit section/Trying to get to eat dude: 5001 : 93
+2024/11/11 15:47:39 I'm done (5003) eating momma, at time: 95
+2024/11/11 15:47:39 Reply from 5003 at time: 95
+2024/11/11 15:47:39 Reply from 5003 at time: 95
+2024/11/11 15:47:39 5002 is eating at time: 96
+2024/11/11 15:47:40 I'm done (5002) eating momma, at time: 96
+2024/11/11 15:47:40 Reply from 5002 at time: 96
+2024/11/11 15:47:40 5001 is eating at time: 97
+2024/11/11 15:47:41 I'm done (5001) eating momma, at time: 97
+2024/11/11 15:47:42 Try to get to crit section/Trying to get to eat dude: 5003 : 95
+2024/11/11 15:47:42 Reply from 5001 at time: 98
+2024/11/11 15:47:42 Reply from 5002 at time: 97
+2024/11/11 15:47:42 5003 is eating at time: 100
+2024/11/11 15:47:43 I'm done (5003) eating momma, at time: 100
+2024/11/11 15:47:43 Try to get to crit section/Trying to get to eat dude: 5002 : 97
+2024/11/11 15:47:43 Reply from 5003 at time: 101
+2024/11/11 15:47:43 Reply from 5001 at time: 99
+2024/11/11 15:47:43 5002 is eating at time: 103
+2024/11/11 15:47:44 Try to get to crit section/Trying to get to eat dude: 5001 : 99
+2024/11/11 15:47:44 Try to get to crit section/Trying to get to eat dude: 5003 : 101
+2024/11/11 15:47:50 I'm done (5002) eating momma, at time: 105
+2024/11/11 15:47:50 Reply from 5002 at time: 105
+2024/11/11 15:47:50 Reply from 5002 at time: 105
+2024/11/11 15:47:59 Try to get to crit section/Trying to get to eat dude: 5002 : 105
+2024/11/11 15:48:03 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = error reading from server: EOF
+2024/11/11 15:48:03 Nobody want to eat the one piece of cake anymore :( : rpc error: code = Unavailable desc = error reading from server: EOF
+2024/11/11 15:48:03 5003 is eating at time: 107
