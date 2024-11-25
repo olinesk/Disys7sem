@@ -7,12 +7,12 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
 
 message Bid {
-    string bidderId = 1;
+    int32 bidderId = 1;
     int32 amount = 2;
     google.protobuf.Timestamp timeStamp = 3;
 }
 
-message Response {}
+message Ack {}
 
 message Status {
     google.protobuf.Duration timeLeft = 1;
@@ -25,6 +25,6 @@ message StatusReq {
 }
 
 service Auction {
-    rpc MakeBid(Bid) returns (Response);
+    rpc MakeBid(Bid) returns (Ack);
     rpc GetStatus(StatusReq) returns (Status);
 }

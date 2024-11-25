@@ -14,11 +14,18 @@ import (
 	auction "github.com/olinesk/Disys7sem/Auction/proto"
 )
 
-var grpcLog glog.LoggerV2
+
 
 // Initialize the logger to output logs to the console
 func init(){
-    grpcLog = glog.NewLoggerV2(os.Stdout, os.Stdout, os.Stout)
+    // Set up log
+	f, err := os.OpenFile("golang-demo.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+
+	if err != nil {
+		log.Fatalf("Could not open file: %v", err)
+	}
+	defer f.Close()
+	log.SetOutput(f)
 }
 
 // FrontEnd struct represents the frontend server that interacts with multiple replication servers

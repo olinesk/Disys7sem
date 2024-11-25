@@ -27,7 +27,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AuctionClient interface {
-	MakeBid(ctx context.Context, in *Bid, opts ...grpc.CallOption) (*Response, error)
+	MakeBid(ctx context.Context, in *Bid, opts ...grpc.CallOption) (*Ack, error)
 	GetStatus(ctx context.Context, in *StatusReq, opts ...grpc.CallOption) (*Status, error)
 }
 
@@ -39,9 +39,9 @@ func NewAuctionClient(cc grpc.ClientConnInterface) AuctionClient {
 	return &auctionClient{cc}
 }
 
-func (c *auctionClient) MakeBid(ctx context.Context, in *Bid, opts ...grpc.CallOption) (*Response, error) {
+func (c *auctionClient) MakeBid(ctx context.Context, in *Bid, opts ...grpc.CallOption) (*Ack, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(Response)
+	out := new(Ack)
 	err := c.cc.Invoke(ctx, Auction_MakeBid_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -63,7 +63,7 @@ func (c *auctionClient) GetStatus(ctx context.Context, in *StatusReq, opts ...gr
 // All implementations must embed UnimplementedAuctionServer
 // for forward compatibility.
 type AuctionServer interface {
-	MakeBid(context.Context, *Bid) (*Response, error)
+	MakeBid(context.Context, *Bid) (*Ack, error)
 	GetStatus(context.Context, *StatusReq) (*Status, error)
 	mustEmbedUnimplementedAuctionServer()
 }
@@ -75,7 +75,7 @@ type AuctionServer interface {
 // pointer dereference when methods are called.
 type UnimplementedAuctionServer struct{}
 
-func (UnimplementedAuctionServer) MakeBid(context.Context, *Bid) (*Response, error) {
+func (UnimplementedAuctionServer) MakeBid(context.Context, *Bid) (*Ack, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MakeBid not implemented")
 }
 func (UnimplementedAuctionServer) GetStatus(context.Context, *StatusReq) (*Status, error) {
