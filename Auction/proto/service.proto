@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package auction;
+option go_package = "github.com/olinesk/Disys7sem/Auction";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+message Bid {
+    string bidderId = 1;
+    int32 amount = 2;
+    google.protobuf.Timestamp timeStamp = 3;
+}
+
+message Response {}
+
+message Status {
+    google.protobuf.Duration timeLeft = 1;
+    int32 highestBid = 2;
+    int32 bidderId = 3;
+}
+
+message StatusReq {
+    int32 bidderId = 1;
+}
+
+service Auction {
+    rpc MakeBid(Bid) returns (Response);
+    rpc GetStatus(StatusReq) returns (Status);
+}
