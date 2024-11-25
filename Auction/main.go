@@ -36,9 +36,9 @@ func main() {
 
 	numOfRepServs := 3
 	for i := 0; i < numOfRepServs; i++ {
-		repServPort := 5010 + (10 *i)
+		repServPort := 5010 + (10 * i)
 
-		conn, err := grpc.Dial(fmt.Sprintf(":%v", repServPort), grpc.WithTimeout(3*time.Second), grpc.WithTransportCredentials(insecure.NewCredentials()))
+		conn, err := grpc.Dial(fmt.Sprintf(":%v", repServPort), grpc.WithTimeout(3*time.Second), grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithBlock())
 		if err != nil {
 			log.Fatalf("Could not listen to port: %v, error: %v \n", repServPort, err)
 			continue
